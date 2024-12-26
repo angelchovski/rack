@@ -1,0 +1,220 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Базов фон и шрифт */
+body {
+  background: #1e1e2f;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+/* Header */
+.app-header {
+  background: #29293d;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.my-logo {
+  height: 50px;
+  width: auto;
+}
+
+/* Основен контейнер за файловия браузър */
+.filemanager {
+  width: 90%;
+  max-width: 1300px;
+  margin: 20px auto;
+  position: relative;
+}
+
+/* Search */
+.search {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.search i {
+  margin-right: 10px;
+}
+
+.search input[type="search"] {
+  display: none; /* Скрит по подразбиране */
+  width: 200px;
+  height: 38px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 8px;
+  font-size: 1rem;
+  color: #2b2b2b;
+  outline: none;
+}
+
+.search.active input[type="search"] {
+  display: block; /* Показва се след клик на иконата */
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  margin: 60px 0 20px 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.breadcrumbs a {
+  color: #fff;
+  text-decoration: none;
+}
+.breadcrumbs .arrow {
+  margin: 0 5px;
+  color: #aaa;
+}
+
+/* Списък с файлове */
+.data {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Всеки елемент от списъка - папка/файл */
+.data li {
+  background-color: #2b2b45;
+  width: 180px;
+  height: 140px;
+  list-style-type: none;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+  overflow: hidden;
+}
+
+.data li:hover {
+  background-color: #3a3a54;
+}
+
+.data li a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.data li .icon {
+  display: block;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.data li .name {
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Няма намерени файлове */
+.nothingfound {
+  display: none;
+  text-align: center;
+  margin: 50px auto;
+}
+.nofiles {
+  font-size: 4rem;
+  color: #d72f6e;
+}
+
+/* Upload area (Drag & Drop) */
+.upload-area {
+  border: 2px dashed #5b5be4;
+  border-radius: 10px;
+  text-align: center;
+  padding: 30px;
+  margin: 20px auto;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.upload-area.drag-over {
+  background: rgba(91, 91, 228, 0.1);
+}
+
+.upload-area p {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+#browse-btn {
+  color: #46ccee;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Модален прозорец */
+.modal {
+  display: none; /* Скрито по подразбиране */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  background: #222;
+  margin: 3% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 900px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* Бутон X за затваряне */
+.close-btn {
+  color: #fff;
+  float: right;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background: #29293d;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Респонсив */
+@media (max-width: 768px) {
+  .data li {
+    width: 48%;
+    height: 120px;
+  }
+}

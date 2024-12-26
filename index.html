@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <title>Модерен Файлов Браузър с Upload</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Нашите стилове -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Връзка към Font Awesome за иконите -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+</head>
+<body>
+
+  <!-- Header с лого и заглавие -->
+  <header class="app-header">
+    <div class="logo-container">
+      <img src="https://dtgarage.eu/rack/img/dt_garage_logo.png" alt="My Logo" class="my-logo" />
+      <h1>Модерен Файлов Браузър</h1>
+    </div>
+  </header>
+
+  <!-- Основен контейнер за файловия браузър -->
+  <div class="filemanager">
+    
+    <!-- Търсачка -->
+    <div class="search">
+      <i class="fas fa-search"></i>
+      <input type="search" placeholder="Търсене..." aria-label="Търсене" />
+    </div>
+
+    <!-- Хлебни трохи (breadcrumbs) -->
+    <nav class="breadcrumbs"></nav>
+
+    <!-- Списък с файлове/директории -->
+    <ul class="data"></ul>
+
+    <!-- Показва се, ако няма намерени файлове -->
+    <div class="nothingfound">
+      <div class="nofiles">×</div>
+      <span>Няма намерени файлове.</span>
+    </div>
+
+    <!-- Drag & Drop + Бутон за upload -->
+    <div class="upload-area" id="upload-area">
+      <i class="fas fa-cloud-upload-alt fa-3x"></i>
+      <p>Пусни файловете тук или <span id="browse-btn">Избери Файлове</span></p>
+      <input type="file" id="file-input" multiple hidden />
+    </div>
+
+  </div> <!-- /filemanager -->
+
+  <!-- Модален прозорец (за изображения, PDF и т.н.) -->
+  <div class="modal" id="preview-modal">
+    <span class="close-btn" id="close-btn">×</span>
+    <div class="modal-content" id="modal-content"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Toni Angelchovski File Browser</p>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Нашият скрипт -->
+  <script src="script.js"></script>
+</body>
+</html>
